@@ -26,10 +26,12 @@ public class Vehi2Roues extends Vehicule {
 	private Type2Roues type2Roues;
 
 	public Vehi2Roues(Integer idVehicule, String couleur, double poids, double prixJournalier,
-			List<Commentaire> commentaires, List<Reservation> reservations) {
-		super(idVehicule, couleur, poids, prixJournalier, commentaires, reservations);
+			List<Commentaire> commentaires, List<Reservation> reservations, Agence agence) {
+		super(idVehicule, couleur, poids, prixJournalier, commentaires, reservations, agence);
 		
 	}
+
+	
 	
 	
 }

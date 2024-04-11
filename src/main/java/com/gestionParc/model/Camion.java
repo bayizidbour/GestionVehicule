@@ -15,14 +15,15 @@ public class Camion extends Vehi4Roues {
 
 	@Min(7)
 	private double longeur;
+
+	public Camion(Integer idVehicule, String couleur, double poids, double prixJournalier,
+			List<Commentaire> commentaires, List<Reservation> reservations, Agence agence) {
+		super(idVehicule, couleur, poids, prixJournalier, commentaires, reservations, agence);
+		
+	}
 	
 	
 
-	public Camion(Integer idVehicule, String couleur, double poids, double prixJournalier,
-			List<Commentaire> commentaires, List<Reservation> reservations, @Size(min = 2, max = 4) int nbPorte) {
-		super(idVehicule, couleur, poids, prixJournalier, commentaires, reservations, nbPorte);
-		
-	}
 	
 	
 }

@@ -4,6 +4,8 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,15 +17,16 @@ import lombok.Setter;
 @Getter
 public class Vehi4Roues extends Vehicule {
 
-	@Size(min = 2, max = 4)
-	@Column(length = 4)
+	@Min (2)		
+	@Max(4)
 	private int nbPorte;
 
 	public Vehi4Roues(Integer idVehicule, String couleur, double poids, double prixJournalier,
-			List<Commentaire> commentaires, List<Reservation> reservations, @Size(min = 2, max = 4) int nbPorte) {
-		super(idVehicule, couleur, poids, prixJournalier, commentaires, reservations);
-		this.nbPorte = nbPorte;
+			List<Commentaire> commentaires, List<Reservation> reservations, Agence agence) {
+		super(idVehicule, couleur, poids, prixJournalier, commentaires, reservations, agence);
+		
 	}
+
 	
 	
 }

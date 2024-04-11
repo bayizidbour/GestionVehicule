@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
@@ -37,7 +39,9 @@ public abstract class Vehicule {
 	@OneToMany(mappedBy = "vehicule")
 	private List<Reservation> reservations;
 
-	
+	@ManyToOne
+	@JoinColumn(name = "id_agence")
+	private Agence agence;
 	
 	
 }
